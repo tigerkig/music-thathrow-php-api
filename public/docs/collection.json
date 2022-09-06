@@ -1,0 +1,1653 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "ThathrowDown API Documentation",
+        "_postman_id": "6997cb99-2ed8-4a11-a1fd-cb96f3d36470",
+        "description": "API for the beat selling application ThathrowDown",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Attempt to authenticate a new session.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"eos\",\"password\":\"rerum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Destroy an authenticated session.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Send a reset link to the given user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "forgot-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/forgot-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reset the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "reset-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/reset-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"a\",\"email\":\"et\",\"password\":\"placeat\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a new registered user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"sapiente\",\"email\":\"cumque\",\"password\":\"optio\",\"password_confirmation\":\"rerum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Mark the authenticated user's email address as verified.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "email\/verify\/:id\/:hash",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/email\/verify\/:id\/:hash",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "magnam",
+                                    "description": "The ID of the verify."
+                                },
+                                {
+                                    "id": "hash",
+                                    "key": "hash",
+                                    "value": "error",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6Ild1WEFhY0ovanlVOGxQNDdMTkZ0Vnc9PSIsInZhbHVlIjoibmRFb3BaTTN6OS9SaU1saDZsSmNBWTlVSnhyQ2pKWTlBUVNEenl2RTA1QUlwYXFPbU5xcmFUcDJMSVZuZXJPMFpKRTdrbXVQWXJKYjVaQ0NwcHN1SHBZSTdFazJIRStaR3pKMFVwUDNzdHNiVDVmZHJ4YzY5c25EbkpRNmExTTkiLCJtYWMiOiIxMDE0NDJmNTUyYjk3OWUxZmNlN2I2MmE2NWRlYjliODUzNzVmMTA0ODE1ODk2MjYyZjQyOTc1OGZhODE0OTU3IiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; samesite=lax; thathrowdown_session=eyJpdiI6Im5rS0Z3a1ZraFRPR09kOUNWRE9rWGc9PSIsInZhbHVlIjoiV0k2TE1nZkdQbmFHUE91UlYzMDE0QVZVVlVZVUx1Y1hZNkpMZWlsN0ZZa1l4OW5QQW9WYmdadGlka0ZGVlk5RExJVkVUQkFHb0JZcHd5MmNPL2JqdTFQKzZaNEs5OS92bFVzUS9TM0MxZ1cxdEU1YW81bjB4K0hyRHlXYUZ0UzUiLCJtYWMiOiJlNDU0NTMwZTg4OTdjZmQwN2JjODI3NGM1NjYwOWJmYWQ0Y2Q3NmE0ZWY4Mzg4MWJlMGM5M2M1ZTdlMTViZjE5IiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; R5eS2rgNDOUy7xD8k93qH0YHCe8AUklVQPZXyyRu=eyJpdiI6IlZMTUpEUkg2RXJUZmFHWEJZRkpoWnc9PSIsInZhbHVlIjoiTGtyVzdXNFYxV3VRck0rMWd2Wmx0ZWpCRlNoM1F0cEVmUld4YWxmNTN2TGVvL0M1bnZQeXRsMDh4aWNNWXM5NmZnMXZuMHM3MjVUR2lTQ1A2akZCSms3ZDcyYVRTaTFMK0hEbzJIbFR3dG1YeFpGemZsU0MzQUt3c20yd3Jrckg4L0M2dlpaN1I3WmlmWjl4UHR2dks2eHpWOGVOSjNsRTAvUG95V0FzOHNBU0o3Y2N0VkpjWmpDYXdZVWZld25XcHUySGV5dWV0aXpqTWxxcTh5dHI2dnZmcWtVaCtpaG9BYURzQTRyemdvTkRyYk5sME5CNUhZNmk3YzZMY2VhUjVyYlk0QlVQMzVWRkdqNll6dHRIM1pQM0VlTFp5c0ltekEzdUhyeWZSUkRmR1ZnTU93V3pHZFQ2dUZRbnVscEJiek1KQkhubklpbUZsNHA4NDRpVnA1RUlQOFFtTVhSUVB5Tk1HRGpDd0ZSaHdJaG0vcXBDSDBvdWhiZlpiSkpBNTNxc0dPcHhrR0JmdlFXYk15TXdHZz09IiwibWFjIjoiZWMyNTAwMWE3ZTBiZTk5ZWJmZDFmMTg0ZjExYjAxNWM3MDY3OTU5MjY2ZTgzZTAwOGU3MDAxMWFiNzM4OTI0MiIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Send a new email verification notification.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "email\/verification-notification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/email\/verification-notification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the user's profile information.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/profile-information",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/profile-information"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"dolor\",\"email\":\"iure\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"a\",\"password\":\"dicta\",\"password_confirmation\":\"architecto\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get the password confirmation status.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/confirmed-password-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/confirmed-password-status"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImN0RnJqSE5hL2JwQitUYWVnN25PM3c9PSIsInZhbHVlIjoicGw1MkFnYnpwdGxiRCsraWNrY0tnek4zaEtQNUVsc0JvVUJkNnp1QjFZRW92MnVkYlNLb2V3bmVwWk5rRTdKWmd5OUQwdnlnZU9HL3hkdGdrdXViOU9CR2hYTGFoK0p1aEU0THdvUzVqWkdUQ3Ixa2VDM3lvZnE0Q0dpWmU2M0MiLCJtYWMiOiJkMTdjMTAzNDUxYWUyNzY1ZDUyNzRhZTRkZWI4Yjc0ZjlkMDVjYjZlOWY2ODlhYWQzNmZkNjJjMjc4YzQzNzU2IiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; samesite=lax; thathrowdown_session=eyJpdiI6IjMrK3REMDNna1MvT0hIQWFWOUQ5Y0E9PSIsInZhbHVlIjoiWXozZ3dLNnFQOHZWV0VOdTNkMmV2a1pNd0tWL3JxRGFDa3NWUWtoWnY5aHFZeUduN1VCdnVRZzlYS21aL1R6V3JPak0vTlMxU3RnZVJOZys4L3pnOWFtRXJibTFVdEJUMGZJU2VQbTRnM3h2d0NUQkRreUo5OERaMWJRZVRmSUoiLCJtYWMiOiIxMmYzZGQ0Mjk4NjE1MTQyNGZiYjZhYzUxMjM5YzhiZDAxMmM2MjZlN2YzNTg2ODZjNDE4Y2M4NzU0MTA1MTAwIiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; R5eS2rgNDOUy7xD8k93qH0YHCe8AUklVQPZXyyRu=eyJpdiI6Im1aQWFTUDFxRXhUby9TLzN4ZVcyd0E9PSIsInZhbHVlIjoiUkRkMEdLWGNtajEzNlRRRXA5bFdlQWtMWU02aWxQRjlaZHErTjBJR3NjUzhwMytjQzcvb3l5cEQzcUE4anJuR1NndGsxZ1d5WFFsbVhpbW41Rms0UDdQOXkzR2lCZzRpWUhSNjN5cDV2c1hGMmYyanpQaExVVEtlcDJzUGd4cCtrRExEWkpsUmlNSlM4Vk5RWjlOQWJWL281LzJTUVpGdE1oLzlNK0l1SVNaVEpJNUZJNjJyQ2xWcDNoSVZNVVNHaUZyVFA3UVVQM1I5M1gxQ0tqR1JlcW1ocERIelRjUjFxTUJjUEtLWGVoRFNTYkxtRDNHNHlsQWZZM1lsU1pEbFF2SXZRS1BNbWExc1g3ODl2bWUrdDBzS3hydnA3R3c3ekxrK3NjTVFCRXlCMUV0MVQyMUoyLzRYeXhoR2p0Sk1hL2FlcXhmb2cvakowWUN3RTk2cEhtZCtiV3JVYzVKOTJ4Nk1IME11UmJ6cnN4NjdCRklENVU5L0ltSC96a216V2dkRjZMMk1GbW12NnhoSTRKVlg0Zz09IiwibWFjIjoiODQwNWRmMDRkMTI5N2IyYWMyNTZhM2VkNzYwZDU2YjYwMGQ3M2ZhNDE0MmZmODY3MDRkZjQwY2E2YTQ0MTQwOSIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; rWvbAzgOS2mBxRsDTpNEM4iSoCP8jFcpkHSOXz3G=eyJpdiI6IitvZldmUXhIbzRGcEQzNmZCNUd0MGc9PSIsInZhbHVlIjoiQlEvdWxzcnpiM3BzMm1QWkVwV1lyWHhIck5kRE1BcGxQbXVYamFLWS9ENHFIcTQ0eWJGazZHZFlVNERtUTg5VWdTMDkvVkg5MmF5NVBNUnVYbGM0MWNkcU9Sd3V5am03MTliT3FPMkxSdldYUCt1R2NRc1NuOWh0WFZ5dUcxalNGcnhTNGFONklmL3lSUHROdDhHdUlqdnA3OEhUZEVGRkRSRFNISWZ1RmpuaDBEb0M0bTZvc1IyemtjaGlDVjN0RkJlc2xLZHl0dDhOc3FCcUQyOHYrbUk5UFhpN2RGdHFxbmNuR2tzV3drWjJLUHRJRWVxaUFnTEo4cW51Ui8wam5Ec1JRRDI1bHN1blNld2U1ajVxTW94YUIvcGUxa2YzZTBNQkxmaWx6dEdIUk83eVd0djV4L0Q0NFZLMVhCUmJXZ0FydDIyelo0Rm9qMXdkekNBNkVaTEduYVo5amdzd2toaGd5RTJPelNyUVVvV1VSUzJKaWhVeUNYdFo5emF2eFh6cnJsWVE5eHdvTnU2QSs4Y0ppUT09IiwibWFjIjoiNmRlNjVlZDZhYWI3NDQ4ODFiNDNiNjNjZDA3ZDIzMjQ5ODdmYmNkNzViMzhlZTFkMzljOWMxOWUwNGE1MWU3MCIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Confirm the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/confirm-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/confirm-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"password\":\"omnis\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "sanctum\/csrf-cookie",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjBaczVZeHhtNWtrbDJxSUVkc29Za1E9PSIsInZhbHVlIjoiRVVCNHRPQ0pMU0JzcUFRQVhBV3d4S0pXVkNsaGJnZjVXYU9TWjNmTHZHd1k3Tm9FcEdPeWZQcWVmc0FPRGZXbGo3cUFRZkJKYkN2RG9XNVlEdXNNdUZsanYwV2xYZjQ5ZS9ocEZKVUFXdWk0QjdxZlJjdjlQUTE0QVlMV3I0WXAiLCJtYWMiOiI1NmIyNDdhOTIwMDk2NGI2NGJhYTFhZGUyNDA0MGExNjg5ZTZhYjIyZTE2NTA0MzY1NjkwODhjMzJjNjhiYzE2IiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; samesite=lax; thathrowdown_session=eyJpdiI6IlNXWkpvckZaTnZDWWxCZ3BqVWhrdHc9PSIsInZhbHVlIjoic0lVZW1yeHpzeFFldUtTWWt5endud0dZd3RjUGNYMjRGeGpFUU5Dc3haKytjOENOa0xWUmlNTmYrbzFtNS9zSWtOeXkxY2E4VXNnZEFjZjJIRDJHVEgwSGhsVS9mQ2c5U0hQUng0VlBiZ05URUlyQUNpbmVKb0kyL1RhTkhOWnIiLCJtYWMiOiI5OTA3YTYxZWM5ODE0OTMwMDI3MjBjZjFiYjgyODU1MjdkYzUxMDVjZWU0NzgwZTc3NjM0YzZmNGI1MzllMWQ4IiwidGFnIjoiIn0%3D; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; R5eS2rgNDOUy7xD8k93qH0YHCe8AUklVQPZXyyRu=eyJpdiI6InROVFpzMzRtVFpIL1laS3k4VG5nS0E9PSIsInZhbHVlIjoiVzVmUUtqSW1HQjdSVUwyanYrMjNHelFBMUkrbXV2OW9NZlFyZjRaM2xydTJNQlpVSXhoZndFTmlNTFhMOUtGTElGU3A0cjVFbXUzVUZYUFVmZ0d0Q205TjFLVWR6OFZtdlF2OUh1SXl6QUVZKy9MQXdhaGN1bFM3VVhTZDFxUEZuTlNyZ2xIQS9Ua0lnd2VVdG15NWNQZ0d3WXhGdmltdmVqTm5tbkZKTWxMRmFTMHlBb0NLZGFiVkhZQjlSNzc1ait0all3OVFYdnI4dnVBNXdMVS9VNEFOcXU0c0UvaWZ6Uk1pZ2kwSGp1MUljakUvdVBLd0Y4ekZiRS9DRTloTFNKN3dYMFdNYy9uRHhPWnhJZ2R3VFVaZjRNcU9naVFuU2tHb1RuRk5yNlR3V0lPM3EwNDhyVDIyNkh4ZjR5TjE3UHhnV2F4eDBiOFZiZzlxQjlZdUkrTlBDTXdnR0twd2s2MDJiRlVYRU1UOVZUSjlKWTJNQk9QUmdCTFhQYkhVU3dzcWJhVmxOOTY2WG81cGlVVm92QT09IiwibWFjIjoiYTkwYzllYjk4YmI3NjY4N2YyMDAyNzUxYTM3MTQ1NzdlMDZhN2MwYjViMmFiYTRhYTMwYWViMTE5OGQzMTE1MCIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; rWvbAzgOS2mBxRsDTpNEM4iSoCP8jFcpkHSOXz3G=eyJpdiI6IkY5VmdzTVhOTmVNY2I0QlY0cHljcHc9PSIsInZhbHVlIjoiZjV3eXVtYzU4YkdJMDlHR05RNzkzeWcwL0x4WkIxK0tYUDE5ajFpZnFVaWxSOTJPWnVCeGZOV1Zybk1RRXdMRWdJK0hYNm5KelB5Vndhc3ROc2M4eFFiQlBwOWthcVNYOXRGRjcrWldwUThjSDYwSWRCOE5jN0YzUVA1aTFuSXVoRVBxV2s4THVBc205MHdUc1pVUTlHRVhOV1RYZlgyQ2RuVGtjN1U1ekdMM2lCNHVwazVuVmxtWHl0cFIxWm5WNXJuQnJkZFMxaVNHODA4TWdKWmpITjJQZElldEJsM3ZUb3RSUHN2a1lWWERkTElxZUlJQ01yLzUwSUZ4WG11WFNBVzlBTjNsWCtHVzVlUUhRQ1A5d0dsYkJxTUZjdGt1ZnRuTEpMS0tha0JLa0t1ZThmc2xyaU1MR0Z4NWRGWU1sY0Y4dDZScTNVMlN2eTRZelBLVlltaTV4QzlRT2VDL3BvSkVUdWE4QTlrSnA1WlRZREN0cFIxSEM2VXMzNEllUzZLblkyV2loaXRIZ3FRQk5xSXR3Zz09IiwibWFjIjoiZTMyZTMzMTNjNmJjMDRmODllODQxNzczMjJiYmZlZjE4NzViOTcyZDg4ZjRmNmVlZmY5MGZmN2JhMWExZjQ0MiIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax; nahoTi3AF88ZQyqXrhAjomWeAHxbtkwETDqLag37=eyJpdiI6IlZ5aUNVTnpwUUtuMTNSb2xselRrV0E9PSIsInZhbHVlIjoiU1VmVTltT3pmaWF2by9UTVpKSDNUVDRic1Z3UGZReVZZUnRralhQT1YyQXRpdm5aVkxtTWYyYlV5VHgvVmw0UWZpWUpTUURhYUE5QnZ0dE1pbTFKZXNpQjNDYkxMRyttcWxwUUFjekk1Mnd4V0w4SHY5SkEwNVBMa0ljbEt0R0xaL25jdStQZWtUVWF0UXBNeGw0KzJBWDNBaXo5My93dU9zRDZOeEF1MDUrdnN0Y2pPSURlZGJ5cWZxbkpHY0tFNFZNNUVEU3VFNytUZEV0cHRpZDNJT2hMUXQxcXRCZWhFYmJ4ek1CQy9GOXRMMEJqcmlOb3JYMnd4RTVMSkdPQ3hweG96U3ZpOXJwRUh2bjMxU2l1Z1hSNEt0dHFGaG9rYVVKOFpvTzRaaDBrbVpDVVhGNW5aOUNZdEVyOW5ZYmVnOTVDTXdhVVVmZDFGQTdhMHgwVml1MEhmYUtoUHNwc25VR1VpVEU3ZkdDSFExdDl2ckU0cHljVmFSd1ZaU0RkIiwibWFjIjoiN2MwNWQwNzMyMjNjOTc2MmI3YzllM2VlZDdkZjM3MTMwNDkyZTNlYmZkNjAzMGY3YWQ1MjlmMTQ1ZDZiZTkyMCIsInRhZyI6IiJ9; expires=Fri, 22-Jul-2022 20:25:55 GMT; Max-Age=7200; path=\/; domain=localhost; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 204,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":147,\"name\":\"Rachael Reichel PhD\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":5,\"name\":\"Afrobeat\"},{\"id\":8,\"name\":\"Dancehall\"},{\"id\":4,\"name\":\"Drill\"},{\"id\":1,\"name\":\"Gospel\"},{\"id\":10,\"name\":\"Grime\"},{\"id\":7,\"name\":\"Hip Hop\"},{\"id\":3,\"name\":\"Jazz\"},{\"id\":9,\"name\":\"R & B\"},{\"id\":6,\"name\":\"Reggae\"},{\"id\":2,\"name\":\"Trap\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/parts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/parts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":10,\"name\":\"Bass\"},{\"id\":4,\"name\":\"Clap\"},{\"id\":7,\"name\":\"FX\"},{\"id\":9,\"name\":\"Guitar\"},{\"id\":5,\"name\":\"Hi Hat\"},{\"id\":1,\"name\":\"Kicks\"},{\"id\":8,\"name\":\"Lead\"},{\"id\":11,\"name\":\"Marimba\"},{\"id\":2,\"name\":\"Piano\"},{\"id\":3,\"name\":\"Shaker\"},{\"id\":6,\"name\":\"Vocal Sample\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/services",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/services"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Mastering\"},{\"id\":3,\"name\":\"Mixing\"},{\"id\":2,\"name\":\"Music Production\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Returns a paginated list of beats",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/beats",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/beats"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"price_from\":48325305757,\"price_to\":7764841163,\"genres\":[5],\"bpm_from\":0,\"bpm_to\":7,\"is_free\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 422,
+                            "body": "{\"message\":\"The price from must be less than 7764841163. (and 1 more error)\",\"errors\":{\"price_from\":[\"The price from must be less than 7764841163.\"],\"price_to\":[\"The price to must be greater than 48325305757.\"]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a beat",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/beats",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/beats"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "vguwtvxlbtoaryhdxjdjknkccjbqrcgpejslyxohugsmwbqnaraatocgguhopvonicggaexqfqdvwtcszpbxafiaswtbdtbcfdkvbrywftxzyopxfjamtncoziibkumcobqrijvyptzaxjfzobrhlrgojlkqzbwplwkxcztgeflxjzhuyiuzucjlfmusmavxteejmyvpouyducekrrkwsmthxetqbkoybmopbmchhudozbtgjsdybetws",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "sjh",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "genres[0]",
+                                    "value": 15,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "parts[0]",
+                                    "value": 7,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "bpm",
+                                    "value": 39,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "is_free",
+                                    "value": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "is_exclusive",
+                                    "value": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "price",
+                                    "value": 82913213,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "artwork",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "preview",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "download",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Returns the latest beats",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/beats\/latest",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/beats\/latest"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"price_from\":10560348215,\"price_to\":1458470188,\"genres\":[12],\"bpm_from\":0,\"bpm_to\":299,\"is_free\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 422,
+                            "body": "{\"message\":\"The price from must be less than 1458470188. (and 2 more errors)\",\"errors\":{\"price_from\":[\"The price from must be less than 1458470188.\"],\"price_to\":[\"The price to must be greater than 10560348215.\"],\"genres.0\":[\"The selected genres.0 is invalid.\"]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Returns the trnding beats based on purchases in the last 30 days",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/beats\/trending",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/beats\/trending"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"price_from\":23502603601,\"price_to\":6050795340,\"genres\":[6],\"bpm_from\":0,\"bpm_to\":246,\"is_free\":false}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 422,
+                            "body": "{\"message\":\"The price from must be less than 6050795340. (and 1 more error)\",\"errors\":{\"price_from\":[\"The price from must be less than 6050795340.\"],\"price_to\":[\"The price to must be greater than 23502603601.\"]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a beat.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/beats\/:beat",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/beats\/:beat",
+                            "variable": [
+                                {
+                                    "id": "beat",
+                                    "key": "beat",
+                                    "value": "6",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":6,\"name\":\"Beat Saber\",\"description\":\"My first beat\",\"price\":12400,\"bpm\":123,\"is_free\":false,\"is_exclusive\":false,\"status\":3,\"purchases_count\":null,\"genres\":[{\"id\":3,\"name\":\"Jazz\"},{\"id\":4,\"name\":\"Drill\"}],\"artwork\":{\"id\":21,\"type\":\"ARTWORK\",\"file_type\":\"image\\\/jpeg\",\"file_size\":329769,\"name\":\"phpcMskLN\",\"url\":\"http:\\\/\\\/192.168.1.109:9000\\\/thathrowdev\\\/public\\\/users\\\/2\\\/beats\\\/6\\\/F8mDKFAq07Ja1UmsARodB0mysfFzWhPSN5QCzx0h.jpg\"},\"creator\":{\"id\":2,\"name\":\"Kevin ANATOLE\"}}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/carts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/carts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"beats\":[4]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove beats from the cart",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts\/remove",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts\/remove"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"beats\":[6]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/carts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts"
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/purchases",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/purchases",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/purchases"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/purchases",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/purchases",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/purchases"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/purchases\/{purchase}\/complete",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/purchases\/:purchase\/complete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/purchases\/:purchase\/complete",
+                            "variable": [
+                                {
+                                    "id": "purchase",
+                                    "key": "purchase",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{}",
+                            "name": "success"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/purchases\/{purchase}\/cancel",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/purchases\/:purchase\/cancel",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/purchases\/:purchase\/cancel",
+                            "variable": [
+                                {
+                                    "id": "purchase",
+                                    "key": "purchase",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/paypal\/webhook",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/paypal\/webhook",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/paypal\/webhook"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/webhook\/handle",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/webhook\/handle",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/webhook\/handle"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/playlists",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":163,\"name\":\"Pete Feil I\",\"creator\":{\"id\":148,\"name\":\"Modesto Rowe\"},\"image\":null},{\"id\":164,\"name\":\"Toney Luettgen\",\"creator\":{\"id\":149,\"name\":\"Hoyt Hackett\"},\"image\":null}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the playlist."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":165,\"name\":\"Houston Armstrong\",\"creator\":{\"id\":150,\"name\":\"Dr. Emmanuelle Stoltenberg\"},\"image\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "h",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "beats[0]",
+                                    "value": 6,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":166,\"name\":\"Harold Eichmann\",\"creator\":{\"id\":151,\"name\":\"Dr. Cecil Walter\"},\"image\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists\/{playlist}\/add",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists\/:playlist\/add",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists\/:playlist\/add",
+                            "variable": [
+                                {
+                                    "id": "playlist",
+                                    "key": "playlist",
+                                    "value": "3",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"beats\":[3]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":167,\"name\":\"Hudson Hill Jr.\",\"creator\":{\"id\":152,\"name\":\"Dr. Preston Daugherty\"},\"image\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the playlist."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"j\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":168,\"name\":\"Horacio Effertz\",\"creator\":{\"id\":153,\"name\":\"Delfina Tremblay\"},\"image\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists\/{playlist}\/remove",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists\/:playlist\/remove",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists\/:playlist\/remove",
+                            "variable": [
+                                {
+                                    "id": "playlist",
+                                    "key": "playlist",
+                                    "value": "3",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"beats\":[9]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":169,\"name\":\"Stefan Windler\",\"creator\":{\"id\":154,\"name\":\"Dr. Lukas Trantow Jr.\"},\"image\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/playlists\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/playlists\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/playlists\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the playlist."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{}",
+                            "name": "success"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/producers\/trending",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/producers\/trending",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/producers\/trending"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[]}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

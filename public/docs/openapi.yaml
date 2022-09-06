@@ -1,0 +1,1917 @@
+openapi: 3.0.3
+info:
+  title: 'ThathrowDown API Documentation'
+  description: 'API for the beat selling application ThathrowDown'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /login:
+    post:
+      summary: 'Attempt to authenticate a new session.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: eos
+                password:
+                  type: string
+                  description: ''
+                  example: rerum
+      security: []
+  /logout:
+    post:
+      summary: 'Destroy an authenticated session.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  /forgot-password:
+    post:
+      summary: 'Send a reset link to the given user.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: ut
+      security: []
+  /reset-password:
+    post:
+      summary: 'Reset the user''s password.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: ''
+                  example: a
+                email:
+                  type: string
+                  description: ''
+                  example: et
+                password:
+                  type: string
+                  description: ''
+                  example: placeat
+  /register:
+    post:
+      summary: 'Create a new registered user.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: sapiente
+                email:
+                  type: string
+                  description: required.
+                  example: cumque
+                password:
+                  type: string
+                  description: ''
+                  example: optio
+                password_confirmation:
+                  type: string
+                  description: ''
+                  example: rerum
+              required:
+                - name
+                - password
+                - password_confirmation
+      security: []
+  '/email/verify/{id}/{hash}':
+    get:
+      summary: 'Mark the authenticated user''s email address as verified.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the verify.'
+        example: magnam
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: ''
+        example: error
+        required: true
+        schema:
+          type: string
+  /email/verification-notification:
+    post:
+      summary: 'Send a new email verification notification.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  /user/profile-information:
+    put:
+      summary: 'Update the user''s profile information.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: dolor
+                email:
+                  type: string
+                  description: ''
+                  example: iure
+  /user/password:
+    put:
+      summary: 'Update the user''s password.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+                  example: a
+                password:
+                  type: string
+                  description: ''
+                  example: dicta
+                password_confirmation:
+                  type: string
+                  description: ''
+                  example: architecto
+  /user/confirmed-password-status:
+    get:
+      summary: 'Get the password confirmation status.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+  /user/confirm-password:
+    post:
+      summary: 'Confirm the user''s password.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: ''
+                  example: omnis
+  /sanctum/csrf-cookie:
+    get:
+      summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        204:
+          description: ''
+      tags:
+        - Endpoints
+      security: []
+  /api/user:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 147
+                    name: 'Rachael Reichel PhD'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 147
+                      name: 'Rachael Reichel PhD'
+      tags:
+        - Endpoints
+  /api/genres:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 5
+                      name: Afrobeat
+                    -
+                      id: 8
+                      name: Dancehall
+                    -
+                      id: 4
+                      name: Drill
+                    -
+                      id: 1
+                      name: Gospel
+                    -
+                      id: 10
+                      name: Grime
+                    -
+                      id: 7
+                      name: 'Hip Hop'
+                    -
+                      id: 3
+                      name: Jazz
+                    -
+                      id: 9
+                      name: 'R & B'
+                    -
+                      id: 6
+                      name: Reggae
+                    -
+                      id: 2
+                      name: Trap
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 5
+                        name: Afrobeat
+                      -
+                        id: 8
+                        name: Dancehall
+                      -
+                        id: 4
+                        name: Drill
+                      -
+                        id: 1
+                        name: Gospel
+                      -
+                        id: 10
+                        name: Grime
+                      -
+                        id: 7
+                        name: 'Hip Hop'
+                      -
+                        id: 3
+                        name: Jazz
+                      -
+                        id: 9
+                        name: 'R & B'
+                      -
+                        id: 6
+                        name: Reggae
+                      -
+                        id: 2
+                        name: Trap
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+  /api/parts:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 10
+                      name: Bass
+                    -
+                      id: 4
+                      name: Clap
+                    -
+                      id: 7
+                      name: FX
+                    -
+                      id: 9
+                      name: Guitar
+                    -
+                      id: 5
+                      name: 'Hi Hat'
+                    -
+                      id: 1
+                      name: Kicks
+                    -
+                      id: 8
+                      name: Lead
+                    -
+                      id: 11
+                      name: Marimba
+                    -
+                      id: 2
+                      name: Piano
+                    -
+                      id: 3
+                      name: Shaker
+                    -
+                      id: 6
+                      name: 'Vocal Sample'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 10
+                        name: Bass
+                      -
+                        id: 4
+                        name: Clap
+                      -
+                        id: 7
+                        name: FX
+                      -
+                        id: 9
+                        name: Guitar
+                      -
+                        id: 5
+                        name: 'Hi Hat'
+                      -
+                        id: 1
+                        name: Kicks
+                      -
+                        id: 8
+                        name: Lead
+                      -
+                        id: 11
+                        name: Marimba
+                      -
+                        id: 2
+                        name: Piano
+                      -
+                        id: 3
+                        name: Shaker
+                      -
+                        id: 6
+                        name: 'Vocal Sample'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+  /api/services:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: Mastering
+                    -
+                      id: 3
+                      name: Mixing
+                    -
+                      id: 2
+                      name: 'Music Production'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Mastering
+                      -
+                        id: 3
+                        name: Mixing
+                      -
+                        id: 2
+                        name: 'Music Production'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+  /api/beats:
+    get:
+      summary: 'Returns a paginated list of beats'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The price from must be less than 7764841163. (and 1 more error)'
+                  errors:
+                    price_from:
+                      - 'The price from must be less than 7764841163.'
+                    price_to:
+                      - 'The price to must be greater than 48325305757.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The price from must be less than 7764841163. (and 1 more error)'
+                  errors:
+                    type: object
+                    example:
+                      price_from:
+                        - 'The price from must be less than 7764841163.'
+                      price_to:
+                        - 'The price to must be greater than 48325305757.'
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price_from:
+                  type: integer
+                  description: 'Must be at least 0. Must not be greater than 99999999998.'
+                  example: 48325305757
+                price_to:
+                  type: integer
+                  description: 'Must not be greater than 9999999999.'
+                  example: 7764841163
+                genres:
+                  type: array
+                  description: ''
+                  example:
+                    - 5
+                  items:
+                    type: integer
+                bpm_from:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                bpm_to:
+                  type: integer
+                  description: 'Must not be greater than 300.'
+                  example: 7
+                is_free:
+                  type: boolean
+                  description: ''
+                  example: true
+      security: []
+    post:
+      summary: 'Create a beat'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                artwork:
+                  type: string
+                  format: binary
+                  description: 'Must be a file.'
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: vguwtvxlbtoaryhdxjdjknkccjbqrcgpejslyxohugsmwbqnaraatocgguhopvonicggaexqfqdvwtcszpbxafiaswtbdtbcfdkvbrywftxzyopxfjamtncoziibkumcobqrijvyptzaxjfzobrhlrgojlkqzbwplwkxcztgeflxjzhuyiuzucjlfmusmavxteejmyvpouyducekrrkwsmthxetqbkoybmopbmchhudozbtgjsdybetws
+                description:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: sjh
+                genres:
+                  type: array
+                  description: ''
+                  example:
+                    - 15
+                  items:
+                    type: integer
+                parts:
+                  type: array
+                  description: 'This field is required when <code>is_exclusive</code> is <code>true</code>.'
+                  example:
+                    - 7
+                  items:
+                    type: integer
+                bpm:
+                  type: integer
+                  description: 'Must be at least 0. Must not be greater than 300.'
+                  example: 39
+                is_free:
+                  type: boolean
+                  description: ''
+                  example: false
+                is_exclusive:
+                  type: boolean
+                  description: 'This field is required when <code>is_free</code> is <code>false</code>.'
+                  example: false
+                preview:
+                  type: string
+                  format: binary
+                  description: 'Must be a file.'
+                price:
+                  type: number
+                  description: 'This field is required when <code>is_free</code> is <code>false</code>. Must be at least 0. Must not be greater than 99999999.'
+                  example: 82913213
+                download:
+                  type: string
+                  format: binary
+                  description: 'This field is required when <code>is_free</code> is <code>false</code>.  Must be a file.'
+              required:
+                - name
+                - description
+                - genres
+                - parts
+                - bpm
+                - is_free
+                - preview
+  /api/beats/latest:
+    get:
+      summary: 'Returns the latest beats'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The price from must be less than 1458470188. (and 2 more errors)'
+                  errors:
+                    price_from:
+                      - 'The price from must be less than 1458470188.'
+                    price_to:
+                      - 'The price to must be greater than 10560348215.'
+                    genres.0:
+                      - 'The selected genres.0 is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The price from must be less than 1458470188. (and 2 more errors)'
+                  errors:
+                    type: object
+                    example:
+                      price_from:
+                        - 'The price from must be less than 1458470188.'
+                      price_to:
+                        - 'The price to must be greater than 10560348215.'
+                      genres.0:
+                        - 'The selected genres.0 is invalid.'
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price_from:
+                  type: integer
+                  description: 'Must be at least 0. Must not be greater than 99999999998.'
+                  example: 10560348215
+                price_to:
+                  type: integer
+                  description: 'Must not be greater than 9999999999.'
+                  example: 1458470188
+                genres:
+                  type: array
+                  description: ''
+                  example:
+                    - 12
+                  items:
+                    type: integer
+                bpm_from:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                bpm_to:
+                  type: integer
+                  description: 'Must not be greater than 300.'
+                  example: 299
+                is_free:
+                  type: boolean
+                  description: ''
+                  example: true
+      security: []
+  /api/beats/trending:
+    get:
+      summary: 'Returns the trnding beats based on purchases in the last 30 days'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The price from must be less than 6050795340. (and 1 more error)'
+                  errors:
+                    price_from:
+                      - 'The price from must be less than 6050795340.'
+                    price_to:
+                      - 'The price to must be greater than 23502603601.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The price from must be less than 6050795340. (and 1 more error)'
+                  errors:
+                    type: object
+                    example:
+                      price_from:
+                        - 'The price from must be less than 6050795340.'
+                      price_to:
+                        - 'The price to must be greater than 23502603601.'
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price_from:
+                  type: integer
+                  description: 'Must be at least 0. Must not be greater than 99999999998.'
+                  example: 23502603601
+                price_to:
+                  type: integer
+                  description: 'Must not be greater than 9999999999.'
+                  example: 6050795340
+                genres:
+                  type: array
+                  description: ''
+                  example:
+                    - 6
+                  items:
+                    type: integer
+                bpm_from:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                bpm_to:
+                  type: integer
+                  description: 'Must not be greater than 300.'
+                  example: 246
+                is_free:
+                  type: boolean
+                  description: ''
+                  example: false
+      security: []
+  '/api/beats/{beat}':
+    get:
+      summary: 'Get a beat.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 6
+                    name: 'Beat Saber'
+                    description: 'My first beat'
+                    price: 12400
+                    bpm: 123
+                    is_free: false
+                    is_exclusive: false
+                    status: 3
+                    purchases_count: null
+                    genres:
+                      -
+                        id: 3
+                        name: Jazz
+                      -
+                        id: 4
+                        name: Drill
+                    artwork:
+                      id: 21
+                      type: ARTWORK
+                      file_type: image/jpeg
+                      file_size: 329769
+                      name: phpcMskLN
+                      url: 'http://192.168.1.109:9000/thathrowdev/public/users/2/beats/6/F8mDKFAq07Ja1UmsARodB0mysfFzWhPSN5QCzx0h.jpg'
+                    creator:
+                      id: 2
+                      name: 'Kevin ANATOLE'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 6
+                      name: 'Beat Saber'
+                      description: 'My first beat'
+                      price: 12400
+                      bpm: 123
+                      is_free: false
+                      is_exclusive: false
+                      status: 3
+                      purchases_count: null
+                      genres:
+                        -
+                          id: 3
+                          name: Jazz
+                        -
+                          id: 4
+                          name: Drill
+                      artwork:
+                        id: 21
+                        type: ARTWORK
+                        file_type: image/jpeg
+                        file_size: 329769
+                        name: phpcMskLN
+                        url: 'http://192.168.1.109:9000/thathrowdev/public/users/2/beats/6/F8mDKFAq07Ja1UmsARodB0mysfFzWhPSN5QCzx0h.jpg'
+                      creator:
+                        id: 2
+                        name: 'Kevin ANATOLE'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: beat
+        description: ''
+        example: 6
+        required: true
+        schema:
+          type: integer
+  /api/carts:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                properties:
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beats:
+                  type: array
+                  description: ''
+                  example:
+                    - 4
+                  items:
+                    type: integer
+              required:
+                - beats
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/carts/remove:
+    post:
+      summary: 'Remove beats from the cart'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beats:
+                  type: array
+                  description: ''
+                  example:
+                    - 6
+                  items:
+                    type: integer
+              required:
+                - beats
+      security: []
+  /api/purchases:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/api/purchases/{purchase}/complete':
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: purchase
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/purchases/{purchase}/cancel':
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: purchase
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/paypal/webhook:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/webhook/handle:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/playlists:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 163
+                      name: 'Pete Feil I'
+                      creator:
+                        id: 148
+                        name: 'Modesto Rowe'
+                      image: null
+                    -
+                      id: 164
+                      name: 'Toney Luettgen'
+                      creator:
+                        id: 149
+                        name: 'Hoyt Hackett'
+                      image: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 163
+                        name: 'Pete Feil I'
+                        creator:
+                          id: 148
+                          name: 'Modesto Rowe'
+                        image: null
+                      -
+                        id: 164
+                        name: 'Toney Luettgen'
+                        creator:
+                          id: 149
+                          name: 'Hoyt Hackett'
+                        image: null
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 166
+                    name: 'Harold Eichmann'
+                    creator:
+                      id: 151
+                      name: 'Dr. Cecil Walter'
+                    image: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 166
+                      name: 'Harold Eichmann'
+                      creator:
+                        id: 151
+                        name: 'Dr. Cecil Walter'
+                      image: null
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: h
+                beats:
+                  type: array
+                  description: ''
+                  example:
+                    - 6
+                  items:
+                    type: integer
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be a file.'
+              required:
+                - name
+                - image
+  '/api/playlists/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 165
+                    name: 'Houston Armstrong'
+                    creator:
+                      id: 150
+                      name: 'Dr. Emmanuelle Stoltenberg'
+                    image: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 165
+                      name: 'Houston Armstrong'
+                      creator:
+                        id: 150
+                        name: 'Dr. Emmanuelle Stoltenberg'
+                      image: null
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 168
+                    name: 'Horacio Effertz'
+                    creator:
+                      id: 153
+                      name: 'Delfina Tremblay'
+                    image: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 168
+                      name: 'Horacio Effertz'
+                      creator:
+                        id: 153
+                        name: 'Delfina Tremblay'
+                      image: null
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: j
+              required:
+                - name
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the playlist.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  '/api/playlists/{playlist}/add':
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 167
+                    name: 'Hudson Hill Jr.'
+                    creator:
+                      id: 152
+                      name: 'Dr. Preston Daugherty'
+                    image: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 167
+                      name: 'Hudson Hill Jr.'
+                      creator:
+                        id: 152
+                        name: 'Dr. Preston Daugherty'
+                      image: null
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beats:
+                  type: array
+                  description: ''
+                  example:
+                    - 3
+                  items:
+                    type: integer
+    parameters:
+      -
+        in: path
+        name: playlist
+        description: ''
+        example: 3
+        required: true
+        schema:
+          type: integer
+  '/api/playlists/{playlist}/remove':
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 169
+                    name: 'Stefan Windler'
+                    creator:
+                      id: 154
+                      name: 'Dr. Lukas Trantow Jr.'
+                    image: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 169
+                      name: 'Stefan Windler'
+                      creator:
+                        id: 154
+                        name: 'Dr. Lukas Trantow Jr.'
+                      image: null
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beats:
+                  type: array
+                  description: ''
+                  example:
+                    - 9
+                  items:
+                    type: integer
+    parameters:
+      -
+        in: path
+        name: playlist
+        description: ''
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/producers/trending:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                properties:
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
